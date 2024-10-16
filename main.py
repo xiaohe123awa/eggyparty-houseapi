@@ -3,6 +3,7 @@ import requests
 import time
 import json
 
+qq = input('QQ群: ')
 url = "https://u5pyq.webapp.163.com/apps/u5/house/get_house_data?avatar_id=ZDk%2BNgYrcxAaCF4K"
 headers = {
   "Host": "u5pyq.webapp.163.com",
@@ -34,8 +35,8 @@ while True:
         new_popularity = popularity
         new_total_upvote_num = total_upvote_num
         requests.post('http://localhost:3000/send_group_msg', json={
-            'user_id': 群号,
-            'group_id': 群号,
+            'user_id': qq,
+            'group_id': qq,
             'message': [{
                 'type': 'text',
                 'data': {
